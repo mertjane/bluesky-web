@@ -83,7 +83,7 @@ const Navigation = () => {
           {isMobileMenuOpen ? (
             <div className="md:hidden">
               <button
-                className="text-gray-800 hover:text-blue-600"
+                className="relative right-3"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <svg
