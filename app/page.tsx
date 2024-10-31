@@ -73,7 +73,7 @@ export default function Home() {
   
 
   return (
-    <div className="container-xl h-screen w-full border">
+    <div className="container-xl h-screen w-full">
       {loading ? (
         <Loader />
       ) : (

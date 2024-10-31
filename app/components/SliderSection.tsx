@@ -15,7 +15,7 @@ const SliderSection = () => {
             src="/images/hero-1.webp" // Use Next.js Image component
             alt="Blue Sky Banner"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover"}}
             priority={true}
             blurDataURL="data:image/jpeg;base64,/9j..." // Add a base64 blur placeholder
             sizes="100vw" // Add this line to help Next.js optimize the image

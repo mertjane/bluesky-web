@@ -67,21 +67,21 @@ const Services = forwardRef<HTMLElement>((props, ref) => {
     <section
       ref={ref}
       id="services"
-      className="max-w-7xl px-4 mx-auto pt-24 h-auto sm:px-6 lg:px-8"
+      className="max-w-7xl px-4 mx-auto p-20 h-auto sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900">How We Help You</h1>
-        <p className="text-lg text-gray-600 leading-relaxed mt-6">
+        <p className="text-lg text-gray-600 leading-relaxed mt-6 px-8 lg:px-0">
           Professional alterations for all your clothing needs
         </p>
       </div>
 
       {/* Services List */}
-      <div className="services px-8 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <div
             key={index}
-            className="services-item bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            className="mx-auto bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col align-top justify-between"
           >
             <div className="mx-auto mb-4">
               <Image

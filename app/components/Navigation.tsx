@@ -117,17 +117,13 @@ const Navigation = () => {
               </button>
             </div>
           ) : (
-            <div className="md:hidden">
-              <button
-                id="mobile-menu-button"
-                onClick={handleRotate}
-                className="text-gray-800 hover:text-blue-600"
-              >
+            <div className="md:hidden relative">
+              <button id="mobile-menu-button" onClick={handleRotate}>
                 <svg
                   ref={svgRef}
                   fill="#000000"
                   version="1.1"
-                  className="h-6 w-6"
+                  className="h-6 w-6 absolute top-0 right-0 z-50"
                   id="Layer_1"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
@@ -236,38 +232,46 @@ const Navigation = () => {
         </div>
       </div>
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden mt-4 flex flex-col items-center">
-          <Link
-            href="#home"
-            className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="#services"
-            className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
-            onClick={() => scrollToSection(servicesRef)}
-          >
-            Services
-          </Link>
-          <Link
-            href="#about"
-            className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
-            onClick={() => scrollToSection(aboutRef)}
-          >
-            About
-          </Link>
-          <Link
-            href="#contact"
-            className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
-            onClick={() => scrollToSection(contactRef)}
-          >
-            Contact
-          </Link>
+      <div
+          className={`md:hidden absolute w-full bg-white shadow-lg transform transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full opacity-0 absolute -z-50'
+          }`}
+          style={{
+            top: '100%',
+            left: 0,
+          }}
+        >
+          <div className="flex flex-col items-center border-t border-gray-200">
+            <Link
+              href="#home"
+              className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="#services"
+              className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
+              onClick={() => scrollToSection(servicesRef)}
+            >
+              Services
+            </Link>
+            <Link
+              href="#about"
+              className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
+              onClick={() => scrollToSection(aboutRef)}
+            >
+              About
+            </Link>
+            <Link
+              href="#contact"
+              className="block w-full text-center py-4 text-gray-800 hover:bg-gray-200 hover:text-neutral-900"
+              onClick={() => scrollToSection(contactRef)}
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-      )}
     </nav>
   );
 };
