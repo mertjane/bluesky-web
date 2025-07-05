@@ -4,10 +4,8 @@ import Link from "next/link";
 import Image from "next/image"; // Import the Image component
 
 const SliderSection = () => {
-
-
   return (
-    <section id="home" className="container-xl relative pt-20 h-screen border border-red-500 overflow-hidden">
+    <section id="home" className="container-xl relative pt-20 h-screen  overflow-hidden">
       {/** Background image containers */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out">
