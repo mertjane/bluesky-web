@@ -46,7 +46,7 @@ const Navigation = () => {
               loading="lazy"
             />
 
-            <h2 className="text-xl font-black text-gray-800">Blue Sky</h2>
+            <h2 className="text-xl font-sans text-gray-800">Blue Sky Alterations</h2>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -83,7 +83,7 @@ const Navigation = () => {
           {isMobileMenuOpen ? (
             <div className="md:hidden">
               <button
-                className="relative lg:right-0 right-5"
+                className="relative lg:right-0 right-0"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <svg

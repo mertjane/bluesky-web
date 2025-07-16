@@ -34,7 +34,7 @@ const SliderSection = () => {
             <div className="">
               <Link
                 href="#contact"
-                className="flex items-center justify-center px-8 py-3 border-transparent text-base font-medium text-white bg-transparent border-2 border-white hover:bg-gray-50 hover:text-black md:py-4 md:text-lg md:px-10"
+                className="flex items-center justify-center px-8 py-3 border-transparent text-base font-medium text-white bg-transparent border-2 border-white hover:bg-gray-50 hover:text-black duration-300 md:py-4 md:text-lg md:px-10"
               >
                 Book Now
               </Link>

@@ -27,6 +27,12 @@ html {
   margin-top: 3rem;
 }
 
+.reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 
 .collage-frame {
   position: relative;

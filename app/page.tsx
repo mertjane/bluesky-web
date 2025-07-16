@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import Loader from "./components/Icons";
 
+
 // Dynamically import components
 const AboutSection = dynamic(() => import("./components/AboutSection"), {
   ssr: false,
@@ -14,7 +15,7 @@ const ContactUs = dynamic(() => import("./components/ContactUs"), {
   loading: () => <div className="hidden">Loading Contact...</div>,
 });
 
-const Footer = dynamic(() => import("./components/Footer"), { 
+const Footer = dynamic(() => import("./components/Footer"), {
   ssr: false,
   loading: () => <div className="hidden">Loading Footer...</div>,
 });
@@ -29,7 +30,12 @@ const Navigation = dynamic(() => import("./components/Navigation"), {
   loading: () => <div className="hidden">Loading Navigation...</div>,
 });
 
-const Services = dynamic(() => import("./components/Services"), { 
+const Reviews = dynamic(() => import("./components/Reviews"), {
+  ssr: false,
+  loading: () => <div className="hidden">Loading Reviews...</div>,
+});
+
+const Services = dynamic(() => import("./components/Services"), {
   ssr: false,
   loading: () => <div className="hidden">Loading Services...</div>,
 });
@@ -42,22 +48,23 @@ const SliderSection = dynamic(() => import("./components/SliderSection"), {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [componentsLoaded, setComponentsLoaded] = useState(false);
-  
+
   // Create refs for each section
   const servicesRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
-  
+
   useEffect(() => {
     // Start loading all components immediately
     Promise.all([
       import("./components/AboutSection"),
       import("./components/ContactUs"),
+      import("./components/Reviews"),
       import("./components/Footer"),
       import("./components/GoogleMap"),
       import("./components/Navigation"),
       import("./components/Services"),
-      import("./components/SliderSection")
+      import("./components/SliderSection"),
     ]).then(() => {
       setComponentsLoaded(true);
     });
@@ -70,8 +77,6 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  
-
   return (
     <div className="container-xl h-screen w-screen">
       {loading ? (
@@ -82,12 +87,13 @@ export default function Home() {
           <SliderSection />
           <Services ref={servicesRef} />
           <AboutSection ref={aboutRef} />
+          <Reviews />
           <ContactUs ref={contactRef} />
           <GoogleMap />
           <Footer />
         </>
       )}
-      
+
       {/* Hidden container to pre-load components */}
       {!loading && !componentsLoaded && (
         <div className="hidden">
