@@ -1,15 +1,26 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image"; // Import the Image component
+
 
 const SliderSection = () => {
   return (
-    <section id="home" className="container-xl relative pt-20 h-screen  overflow-hidden">
+    <section
+      id="home"
+      className="container-xl relative pt-20 h-screen  overflow-hidden"
+    >
       {/** Background image containers */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out">
-          <Image
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover object-center"
+            src="/images/herovideo.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* <Image
             src="/images/hero-1.webp" // Use Next.js Image component
             alt="Blue Sky Banner"
             fill
@@ -17,7 +28,7 @@ const SliderSection = () => {
             priority={true}
             blurDataURL="data:image/jpeg;base64,/9j..." // Add a base64 blur placeholder
             sizes="100vw" // Add this line to help Next.js optimize the image
-          />
+          /> */}
         </div>
       </div>
 
